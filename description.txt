@@ -1,0 +1,12 @@
+You will be creating a gradebook application. Create a form for entering a student's grade. It will have the following fields:
+
+first name
+last name
+points earned
+points possible
+When the form is submitted, create an object that contains the data. Then, use the object's properties to output the following:
+
+first name
+last name
+percentage <-- calculated from points earned / points possible
+letter grade <-- A, B, C, etc. based on percent

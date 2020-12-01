@@ -1,0 +1,24 @@
+.content {
+  padding: 15px;
+  font-size: 18px;
+  background: #dbdfe5;
+  margin-bottom: 15px;
+
+  margin: auto;
+  width: 50%;
+  border: 2px solid green;
+  padding: 10px;
+}
+.content.bg-alt {
+  background: #abb1b8;
+}
+h2 {
+  text-align: center;
+}
+
+.green {
+  text-shadow: black;
+}
+.output {
+    display: none;
+}

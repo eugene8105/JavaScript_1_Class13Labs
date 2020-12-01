@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradebook Application</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <form>
+        <div class="row">
+            <div class="content">
+                <h2>Gradebook Application</h2>
+                <div>
+                    <label for="firstName">First Name<br></label>
+                    <input type="text" name="firstName" id="firstName" value="">
+                </div>
+                <div>
+                    <label for="lastName">Last Name<br>
+                    </label>
+                    <input type="text" name="lastName" id="lastName" value="">
+                </div>
+                <div>
+                    <label for="pointEarned">Points earned<br>
+                    </label>
+                    <input type="number" name="pointEarned" id="pointEarned" value="">
+                </div>
+                <!-- <div>
+                    <label for="pointPossible">Points possible<br>
+                    </label>
+                    <input type="number" name="pointPossible" id="pointPossible" value="0">
+                </div> -->
+                <p>
+                    <input type="submit" name="submitButton" id="submitButton" value="Submit Student">
+                </p>
+                <p>
+                    <input type="submit" name="displayAll" id="displayAll" value="Display Students">
+                </p>
+                <p class="output"> Output: <br><span id="formOutput"></span></p>
+            </div>
+
+        </div>
+
+    </form>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- <script src="jquery.js"></script> -->
+<script src="script.js"></script>
+
+</html>
