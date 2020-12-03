@@ -11,19 +11,21 @@ $(document).ready(
         // add event handlers
         $("#addStudent").click(studentInput);
         
-        $("#sortByName").click(displayStudents(1));
-        $("#sortByPr").click(displayStudents(2));
+        // $("#sortByName").click(fanction(){
+        //     displayStudents(1)
+        // });
+        // $("#sortByPr").click(fanction(displayStudents(2)));
+
+        $("#sortByName").click(displaySortByName);
+
+        $("#sortByPr").click(displaySortByPr);
 
     }
 )
 
-function displayStudents(choice) {
-    
-    if (choice === 1) {
-        gradebook.sort(sortByName);
-    } else if (choice === 2) {
-        gradebook.sort(sortByPr);
-    }
+function displaySortByName() {
+
+    gradebook.sort(sortByName);
 
     $("#formOutput").val("");
     // output on the screen
@@ -38,6 +40,48 @@ function displayStudents(choice) {
 
     return false;
 }
+
+function displaySortByPr() {
+
+    gradebook.sort(sortByPr);
+
+    $("#formOutput").val("");
+    // output on the screen
+    // forEach
+    gradebook.forEach(function (student) {
+        outputMessage = `${student.firstName} ${student.lastName}  ${student.point_Earned} %${student.userPercentage.toFixed(2)} ${student.letter}<br>`;
+        $("#formOutput").append(outputMessage);
+        console.log(outputMessage);
+    })
+
+    $("p.output").show();
+
+    return false;
+}
+
+function displayStudents() {
+    
+    // if (choice === 1) {
+    //     gradebook.sort(sortByName);
+    // } else if (choice === 2) {
+    //     gradebook.sort(sortByPr);
+    // }
+
+    $("#formOutput").val("");
+    // output on the screen
+    // forEach
+    gradebook.forEach(function (student) {
+        outputMessage = `${student.firstName} ${student.lastName}  ${student.point_Earned} %${student.userPercentage.toFixed(2)} ${student.letter}<br>`;
+        $("#formOutput").append(outputMessage);
+        console.log(outputMessage);
+    })
+
+    $("p.output").show();
+
+    return false;
+}
+
+
 
 function sortByName(n1, n2) {
     if (n1.firstName < n2.firstName) {
