@@ -9,13 +9,21 @@ var outputMessage = "";
 $(document).ready(
     function () {
         // add event handlers
-        $("#submitButton").click(studentInput);
-        $("#displayAll").click(displayAll);
+        $("#addStudent").click(studentInput);
+        
+        $("#sortByName").click(displayStudents(1));
+        $("#sortByPr").click(displayStudents(2));
 
     }
 )
 
-function displayAll() {
+function displayStudents(choice) {
+    
+    if (choice === 1) {
+        gradebook.sort(sortByName);
+    } else if (choice === 2) {
+        gradebook.sort(sortByPr);
+    }
 
     $("#formOutput").val("");
     // output on the screen
@@ -29,6 +37,28 @@ function displayAll() {
     $("p.output").show();
 
     return false;
+}
+
+function sortByName(n1, n2) {
+    if (n1.firstName < n2.firstName) {
+        return -1;
+    } else if (n1.firstName > n2.firstName) {
+        return 1;
+    }else{
+        return 0;
+    }
+    
+}
+
+function sortByPr(n1, n2) {
+    if (n1.userPercentage < n2.userPercentage) {
+        return -1;
+    } else if (n1.userPercentage > n2.userPercentage) {
+        return 1;
+    } else{
+        return 0;
+    }
+    
 }
 
 function studentInput() {
